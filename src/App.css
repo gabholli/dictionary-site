@@ -1,38 +1,104 @@
-.App {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+
+.navbar {
+  display: grid;
+  grid-template: 65px repeat(2, auto) / 1fr;
+  grid-template-areas:
+    "text"
+    "search";
+  width: 100%;
+  height: 65px;
+  background-color: lightcoral;
+  gap: 1em;
+}
+
+.navbar-text {
+  justify-self: center;
+  align-self: center;
+}
+
+.navbar-text {
+  grid-area: text;
+}
+
+.search-container {
+  grid-area: search;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main content */
+
+.container {
+  /* margin: 1em; */
+  display: grid;
+  grid-template: repeat(3, auto) / 1fr;
+  grid-template-areas:
+    ". word ."
+    ". phonetics . "
+    ". definitions .";
+  border: 1px solid black;
+  padding: 3em .5em;
+}
+
+.word {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.word,
+.definitions,
+.phonetics {
+  align-self: center;
+  justify-self: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.word {
+  grid-area: word;
+}
+
+.definitions {
+  grid-area: definitions;
+}
+
+.phonetics {
+  grid-area: phonetics;
+}
+
+/* Audio player */
+
+audio {
+  width: 250px;
+  margin: .5em;
+}
+
+/* Media query for tablet or larger screen sizes */
+
+@media (min-width: 768px) {
+  .navbar {
+    grid-template: 65px auto / 1fr 1fr 1fr;
+    grid-template-areas:
+      ". text search"
+      "content content content";
+    gap: unset;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .container {
+    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    grid-template-areas:
+      ". definitions ."
+      "word definitions phonetics"
+      ". definitions .";
   }
 }

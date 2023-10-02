@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from "react"
+import { useState, useEffect } from 'react'
+import Section from './components/Section'
+import Navbar from './components/Navbar'
+// import { nanoid } from "nanoid"
+
 
 function App() {
+  const [word, setWord] = useState([])
+  const [search, setSearch] = useState()
+
+  const handleChange = (event) => {
+    setSearch(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(search)
+  }
+
+  useEffect(() => {
+    fetch("https://api.dictionaryapi.dev/api/v2/entries/en/hi")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setWord(data)
+      })
+      .catch((error) => {
+        console.error("Fetch error", error)
+      })
+
+  }, [])
+
+  const wordData = word && word.map(item => {
+    return (
+      <Section
+        item={item}
+      />
+    )
+  })
+
+  console.log(wordData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      <Navbar
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+      {word && wordData}
     </div>
-  );
+  )
 }
 
-export default App;
+
+export default App
