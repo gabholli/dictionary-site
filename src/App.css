@@ -18,7 +18,7 @@ body {
     "text"
     "search";
   width: 100%;
-  height: 65px;
+  height: 165px;
   background-color: lightcoral;
   gap: 1em;
 }
@@ -60,7 +60,7 @@ body {
 .word,
 .definitions,
 .phonetics {
-  align-self: center;
+  /* align-self: center; */
   justify-self: center;
 }
 
@@ -70,6 +70,7 @@ body {
 
 .definitions {
   grid-area: definitions;
+  margin: 0;
 }
 
 .phonetics {
@@ -87,18 +88,18 @@ audio {
 
 @media (min-width: 768px) {
   .navbar {
-    grid-template: 65px auto / 1fr 1fr 1fr;
+    height: 65px;
+    grid-template: 65px / 1fr 1fr 1fr;
     grid-template-areas:
-      ". text search"
-      "content content content";
+      ". text search";
     gap: unset;
   }
 
   .container {
     grid-template: repeat(3, auto) / repeat(3, 1fr);
     grid-template-areas:
-      ". definitions ."
       "word definitions phonetics"
+      "word definitions ."
       ". definitions .";
   }
 }

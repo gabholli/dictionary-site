@@ -20,7 +20,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("https://api.dictionaryapi.dev/api/v2/entries/en/hi")
+    fetch("https://api.dictionaryapi.dev/api/v2/entries/en/go")
       .then(res => res.json())
       .then(data => {
         console.log(data)

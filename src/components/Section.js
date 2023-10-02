@@ -8,7 +8,7 @@ function Section(props) {
 
     const phonetics = props.item.phonetics.map(item => {
         return (
-            item !== undefined && item !== null && (
+            item.audio && (
                 <div>
                     <audio controls>
                         <source src={item.audio}></source>
