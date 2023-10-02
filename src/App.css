@@ -50,17 +50,12 @@ body {
     ". phonetics . "
     ". definitions .";
   border: 1px solid black;
-  padding: 3em .5em;
-}
-
-.word {
-  text-align: center;
+  padding: 0 .5em;
 }
 
 .word,
 .definitions,
 .phonetics {
-  /* align-self: center; */
   justify-self: center;
 }
 
@@ -101,5 +96,6 @@ audio {
       "word definitions phonetics"
       "word definitions ."
       ". definitions .";
+    padding: .5em;
   }
 }
