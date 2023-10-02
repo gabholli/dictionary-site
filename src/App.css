@@ -44,9 +44,10 @@ body {
 .container {
   /* margin: 1em; */
   display: grid;
-  grid-template: repeat(3, auto) / 1fr;
+  grid-template: repeat(4, auto) / 1fr;
   grid-template-areas:
     "word"
+    "pronunciations"
     "phonetics"
     "definitions";
   border: 1px solid black;
@@ -54,8 +55,9 @@ body {
 }
 
 .word,
-.definitions,
-.phonetics {
+.partOfSpeech,
+.phonetics,
+.definitions {
   place-items: center;
 }
 
@@ -64,14 +66,27 @@ body {
   text-align: center;
 }
 
+.partOfSpeech {
+  grid-area: part;
+  margin: 0;
+}
+
+.pronunciation {
+  grid-area: pronunciations;
+  text-align: center;
+}
+
+.phonetics {
+  grid-area: phonetics;
+  margin: 0 auto;
+}
+
 .definitions {
   grid-area: definitions;
   margin: 0;
 }
 
-.phonetics {
-  grid-area: phonetics;
-}
+
 
 /* Audio player */
 
@@ -95,7 +110,7 @@ audio {
     grid-template: repeat(3, auto) / repeat(3, 1fr);
     grid-template-areas:
       "word definitions phonetics"
-      "word definitions ."
+      ". definitions ."
       ". definitions .";
     padding: .5em .5em 2em .5em;
   }

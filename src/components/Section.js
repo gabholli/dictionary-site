@@ -10,6 +10,7 @@ function Section(props) {
         return (
             item.audio && (
                 <div>
+                    <p className="pronunciation">{item.text}</p>
                     <audio controls>
                         <source src={item.audio}></source>
                         Your browser does not support the audio element.
@@ -19,6 +20,8 @@ function Section(props) {
         )
     })
 
+    // const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
+
     return (
 
         <div className="container">
@@ -27,8 +30,11 @@ function Section(props) {
                 <h3>Possible Definitions:</h3>
                 {definitions}
             </ul>
+            {/* <ul className="partOfSpeech">
+                <h3>Parts of Speech:</h3>
+                {partOfSpeech}
+            </ul> */}
             <div className="phonetics">
-                {props.item.phonetics.audio && <h3>Possible Pronunciations:</h3>}
                 {phonetics}
             </div>
         </div>
