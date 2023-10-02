@@ -15,7 +15,7 @@ function Navbar(props) {
                         value={props.searchData.searchData}
                     >
                     </input>
-                    <button onClick={props.handleSubmit}>Search</button>
+                    {/* <button onClick={props.handleSubmit}>Search</button> */}
                 </form>
             </div>
         </div>
