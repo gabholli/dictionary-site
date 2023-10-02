@@ -8,29 +8,46 @@ import Navbar from './components/Navbar'
 
 function App() {
   const [word, setWord] = useState([])
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState("")
 
   const handleChange = (event) => {
+    event.preventDefault()
     setSearch(event.target.value)
+    // setSearch(prevSearchData => {
+    //   return {
+    //     ...prevSearchData,
+    //     [event.target.name]: event.target.value
+    //   }
+    // })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(search)
+    console.log(search.length)
   }
 
   useEffect(() => {
-    fetch("https://api.dictionaryapi.dev/api/v2/entries/en/go")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        setWord(data)
-      })
-      .catch((error) => {
-        console.error("Fetch error", error)
-      })
+    if (search.length > 0) {
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
+        .then(res => {
+          if (!res.ok) {
+            throw Error("Data not available")
+          }
+          return res.json()
+        })
+        .then(data => {
+          console.log(data)
+          setWord(data)
+        })
+        .catch((error) => {
+          console.error("Fetch error: ", error)
+        })
 
-  }, [])
+    } else {
+      setWord("")
+    }
+
+  }, [search])
 
   const wordData = word && word.map(item => {
     return (
@@ -40,13 +57,12 @@ function App() {
     )
   })
 
-  console.log(wordData)
-
   return (
     <div className="content">
       <Navbar
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        searchData={search}
       />
       {word && wordData}
     </div>

@@ -46,9 +46,9 @@ body {
   display: grid;
   grid-template: repeat(3, auto) / 1fr;
   grid-template-areas:
-    ". word ."
-    ". phonetics . "
-    ". definitions .";
+    "word"
+    "phonetics"
+    "definitions";
   border: 1px solid black;
   padding: 0 .5em 2em;
 }
@@ -56,11 +56,12 @@ body {
 .word,
 .definitions,
 .phonetics {
-  justify-self: center;
+  place-items: center;
 }
 
 .word {
   grid-area: word;
+  text-align: center;
 }
 
 .definitions {
