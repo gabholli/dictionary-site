@@ -81,6 +81,10 @@ body {
   margin: 0 auto;
 }
 
+.definitions-title {
+  text-align: center;
+}
+
 .definitions {
   grid-area: definitions;
   margin: 0;

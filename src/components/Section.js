@@ -27,7 +27,7 @@ function Section(props) {
         <div className="container">
             <h3 className="word">{props.item.word}</h3>
             <ul className="definitions">
-                <h3>Possible Definitions:</h3>
+                <h3>Definitions:</h3>
                 {definitions}
             </ul>
             {/* <ul className="partOfSpeech">
@@ -35,7 +35,7 @@ function Section(props) {
                 {partOfSpeech}
             </ul> */}
             <div className="phonetics">
-                {phonetics}
+                {/* {phonetics} */}
             </div>
         </div>
 

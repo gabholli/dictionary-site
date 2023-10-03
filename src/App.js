@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 
 
 function App() {
-  const [word, setWord] = useState([])
+  const [word, setWord] = useState(null)
   const [search, setSearch] = useState("")
 
   const handleChange = (event) => {
@@ -23,29 +23,24 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(search.length)
+    setSearch(event.target.search.value)
   }
 
   useEffect(() => {
-    if (search.length > 0) {
-      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
-        .then(res => {
-          if (!res.ok) {
-            throw Error("Data not available")
-          }
-          return res.json()
-        })
-        .then(data => {
-          console.log(data)
-          setWord(data)
-        })
-        .catch((error) => {
-          console.error("Fetch error: ", error)
-        })
-
-    } else {
-      setWord("")
-    }
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
+      .then(res => {
+        if (!res.ok) {
+          throw Error("Data not available")
+        }
+        return res.json()
+      })
+      .then(data => {
+        console.log(data)
+        setWord(data)
+      })
+      .catch((error) =>
+        console.error("Fetch error: ", error)
+      )
 
   }, [search])
 
@@ -62,7 +57,7 @@ function App() {
       <Navbar
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        searchData={search}
+        search={search}
       />
       {word && wordData}
     </div>
