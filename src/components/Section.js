@@ -6,19 +6,19 @@ function Section(props) {
         item => <li>{item.definition}</li>
     ))
 
-    const phonetics = props.item.phonetics.map(item => {
-        return (
-            item.audio && (
-                <div>
-                    <p className="pronunciation">{item.text}</p>
-                    <audio controls>
-                        <source src={item.audio}></source>
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            )
-        )
-    })
+    // const phonetics = props.item.phonetics.map(item => {
+    //     return (
+    //         item.audio && (
+    //             <div>
+    //                 <p className="pronunciation">{item.text}</p>
+    //                 <audio controls>
+    //                     <source src={item.audio}></source>
+    //                     Your browser does not support the audio element.
+    //                 </audio>
+    //             </div>
+    //         )
+    //     )
+    // })
 
     // const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
 
