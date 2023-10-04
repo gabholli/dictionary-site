@@ -56,18 +56,8 @@ body {
   padding: 0 .5em 2em;
 }
 
-.word,
-.partOfSpeech,
-.phonetics,
-.synonyms,
-.antonyms {
-  place-items: center;
-  justify-self: center;
-}
-
-
 h3 {
-  text-align: center;
+  text-align: left;
 }
 
 .word {
@@ -83,10 +73,6 @@ h3 {
 
 .partOfSpeech {
   grid-area: partOfSpeech;
-}
-
-.definitions-title {
-  text-align: center;
 }
 
 .definitions {
@@ -152,5 +138,14 @@ input {
       ". definitions .";
 
     padding: .5em .5em 2em .5em;
+  }
+
+  .word,
+  .partOfSpeech,
+  .phonetics,
+  .synonyms,
+  .antonyms {
+    place-items: center;
+    justify-self: center;
   }
 }
