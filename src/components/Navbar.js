@@ -10,12 +10,12 @@ function Navbar(props) {
                 <form onSubmit={props.handleSubmit}>
                     <input type="text"
                         placeholder="Search for a word"
-                        onChange={props.handleChange}
+                        // onChange={props.handleChange}
                         name="search"
-                        value={props.search}
+                    // value={props.search}
                     >
                     </input>
-                    {/* <button>Search</button> */}
+                    <button>Search</button>
                 </form>
             </div>
         </div>

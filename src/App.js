@@ -10,16 +10,16 @@ function App() {
   const [word, setWord] = useState(null)
   const [search, setSearch] = useState("")
 
-  const handleChange = (event) => {
-    event.preventDefault()
-    setSearch(event.target.value)
-    // setSearch(prevSearchData => {
-    //   return {
-    //     ...prevSearchData,
-    //     [event.target.name]: event.target.value
-    //   }
-    // })
-  }
+  // const handleChange = (event) => {
+  //   event.preventDefault()
+  //   setSearch(event.target.value)
+  //   setSearch(prevSearchData => {
+  //     return {
+  //       ...prevSearchData,
+  //       [event.target.name]: event.target.value
+  //     }
+  //   })
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="content">
       <Navbar
-        handleChange={handleChange}
+        // handleChange={handleChange}
         handleSubmit={handleSubmit}
         search={search}
       />

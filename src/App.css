@@ -117,6 +117,15 @@ audio {
   margin: 0 auto;
 }
 
+/* Search button */
+
+button {
+  border: none;
+  margin-left: 1em;
+  border-radius: 5px;
+  padding: .2em .4em;
+}
+
 /* Media query for tablet or larger screen sizes */
 
 @media (min-width: 768px) {
