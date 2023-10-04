@@ -138,11 +138,14 @@ button {
   }
 
   .container {
-    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    grid-template: repeat(5, auto) / repeat(3, 1fr);
     grid-template-areas:
       "word definitions phonetics"
       "partOfSpeech definitions synonyms"
-      ". definitions antonyms";
+      ". definitions antonyms"
+      ". definitions ."
+      ". definitions .";
+
     padding: .5em .5em 2em .5em;
   }
 }
