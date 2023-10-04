@@ -6,21 +6,27 @@ function Section(props) {
         item => <li>{item.definition}</li>
     ))
 
-    // const phonetics = props.item.phonetics.map(item => {
-    //     return (
-    //         item.audio && (
-    //             <div>
-    //                 <p className="pronunciation">{item.text}</p>
-    //                 <audio controls>
-    //                     <source src={item.audio}></source>
-    //                     Your browser does not support the audio element.
-    //                 </audio>
-    //             </div>
-    //         )
-    //     )
-    // })
+    const phonetics = props.item.phonetics.map(item => {
+        return (
+            item.audio && (
+                <div>
+                    <p className="pronunciation">{item.text}</p>
+                    <audio controls>
+                        <source src={item.audio}></source>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            )
+        )
+    })
 
-    // const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
+    const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
+
+    const synonyms = props.item.meanings.map(item => item.synonyms.map(item =>
+        <li>{item}</li>))
+
+    const antonyms = props.item.meanings.map(item => item.antonyms.map(item =>
+        <li>{item}</li>))
 
     return (
 
@@ -30,13 +36,21 @@ function Section(props) {
                 <h3>Definitions:</h3>
                 {definitions}
             </ul>
-            {/* <ul className="partOfSpeech">
+            <ul className="partOfSpeech">
                 <h3>Parts of Speech:</h3>
                 {partOfSpeech}
-            </ul> */}
+            </ul>
             <div className="phonetics">
-                {/* {phonetics} */}
+                {phonetics}
             </div>
+            <ul className="synonyms">
+                <h3>Synonyms:</h3>
+                {synonyms}
+            </ul>
+            <ul className="antonyms">
+                <h3>Antonyms:</h3>
+                {antonyms}
+            </ul>
         </div>
 
     )

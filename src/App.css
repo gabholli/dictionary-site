@@ -44,12 +44,14 @@ body {
 .container {
   /* margin: 1em; */
   display: grid;
-  grid-template: repeat(4, auto) / 1fr;
+  grid-template: repeat(3, auto) / 1fr;
   grid-template-areas:
     "word"
-    "pronunciations"
     "phonetics"
-    "definitions";
+    "partOfSpeech"
+    "definitions"
+    "synonyms"
+    "antonyms";
   border: 1px solid black;
   padding: 0 .5em 2em;
 }
@@ -57,8 +59,15 @@ body {
 .word,
 .partOfSpeech,
 .phonetics,
-.definitions {
+.synonyms,
+.antonyms {
   place-items: center;
+  justify-self: center;
+}
+
+
+h3 {
+  text-align: center;
 }
 
 .word {
@@ -66,19 +75,14 @@ body {
   text-align: center;
 }
 
-.partOfSpeech {
-  grid-area: part;
-  margin: 0;
-}
-
-.pronunciation {
-  grid-area: pronunciations;
+.phonetics {
+  grid-area: phonetics;
+  /* margin: 0 auto; */
   text-align: center;
 }
 
-.phonetics {
-  grid-area: phonetics;
-  margin: 0 auto;
+.partOfSpeech {
+  grid-area: partOfSpeech;
 }
 
 .definitions-title {
@@ -87,16 +91,30 @@ body {
 
 .definitions {
   grid-area: definitions;
+}
+
+.definitions,
+.partOfSpeech,
+.synonyms,
+.antonyms {
   margin: 0;
 }
 
+.synonyms {
+  grid-area: synonyms;
+}
+
+.antonyms {
+  grid-area: antonyms;
+}
 
 
 /* Audio player */
 
 audio {
+  display: block;
   width: 250px;
-  margin: .5em;
+  margin: 0 auto;
 }
 
 /* Media query for tablet or larger screen sizes */
@@ -114,8 +132,8 @@ audio {
     grid-template: repeat(3, auto) / repeat(3, 1fr);
     grid-template-areas:
       "word definitions phonetics"
-      ". definitions ."
-      ". definitions .";
+      "partOfSpeech definitions synonyms"
+      ". definitions antonyms";
     padding: .5em .5em 2em .5em;
   }
 }

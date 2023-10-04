@@ -27,20 +27,25 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
-      .then(res => {
-        if (!res.ok) {
-          throw Error("Data not available")
-        }
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        setWord(data)
-      })
-      .catch((error) =>
-        console.error("Fetch error: ", error)
-      )
+    if (search.length > 0) {
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
+        .then(res => {
+          if (!res.ok) {
+            throw Error("Data not available")
+          }
+          return res.json()
+        })
+        .then(data => {
+          console.log(data)
+          setWord(data)
+        })
+        .catch((error) =>
+          console.error("Fetch error: ", error)
+        )
+    } else {
+      setWord("")
+    }
+
 
   }, [search])
 
