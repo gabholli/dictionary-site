@@ -52,6 +52,7 @@ function App() {
   const wordData = word && word.map(item => {
     return (
       <Section
+        key={item.meanings[0].definitions[0].definition}
         item={item}
       />
     )
