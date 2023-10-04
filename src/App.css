@@ -141,6 +141,7 @@ input {
       ". definitions .";
 
     padding: .5em .5em 2em .5em;
+    gap: 20px;
   }
 
   .word,
@@ -150,5 +151,9 @@ input {
   .antonyms {
     place-items: center;
     justify-self: center;
+  }
+
+  h3 {
+    text-align: center;
   }
 }
