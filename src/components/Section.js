@@ -26,32 +26,32 @@ function Section(props) {
 
     const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
 
-    const synonyms = props.item.meanings.map(item => item.synonyms.map((item, index) => {
-        return (
+    const synonyms = props.item.meanings.map(item => item.synonyms.map((item, index) =>
+
+        <div>
             <div>
-                <div>
-                    {index === 0 && snyonymHeading && <h3>Synonyms:</h3>}
-                    <li>{item}</li>
+                {index === 0 && snyonymHeading && <h3>Synonyms:</h3>}
+                <li>{item}</li>
 
-                </div>
-                {snyonymHeading || setSynonymHeading(true)}
             </div>
-        )
-    }))
+            {snyonymHeading || setSynonymHeading(true)}
+        </div>
+
+    ))
 
 
-    const antonyms = props.item.meanings.map(item => item.antonyms.map((item, index) => {
-        return (
+    const antonyms = props.item.meanings.map(item => item.antonyms.map((item, index) =>
+
+        <div>
             <div>
-                <div>
-                    {index === 0 && antonymHeading && <h3>Antonyms:</h3>}
-                    <li>{item}</li>
+                {index === 0 && antonymHeading && <h3>Antonyms:</h3>}
+                <li>{item}</li>
 
-                </div>
-                {antonymHeading || setAntonymHeading(true)}
             </div>
-        )
-    }))
+            {antonymHeading || setAntonymHeading(true)}
+        </div>
+
+    ))
 
 
     return (
