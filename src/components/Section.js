@@ -1,6 +1,10 @@
 import React from "react"
+import { useState } from "react"
 
 function Section(props) {
+
+    const [snyonymHeading, setSynonymHeading] = useState(false)
+    const [antonymHeading, setAntonymHeading] = useState(false)
 
     const definitions = props.item.meanings.map(item => item.definitions.map(
         item => <li>{item.definition}</li>
@@ -22,11 +26,33 @@ function Section(props) {
 
     const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
 
-    const synonyms = props.item.meanings.map(item => item.synonyms.map(item =>
-        <li>{item}</li>))
+    const synonyms = props.item.meanings.map(item => item.synonyms.map((item, index) => {
+        return (
+            <div>
+                <div>
+                    {index === 0 && snyonymHeading && <h3>Synonyms:</h3>}
+                    <li>{item}</li>
 
-    const antonyms = props.item.meanings.map(item => item.antonyms.map(item =>
-        <li>{item}</li>))
+                </div>
+                {snyonymHeading || setSynonymHeading(true)}
+            </div>
+        )
+    }))
+
+
+    const antonyms = props.item.meanings.map(item => item.antonyms.map((item, index) => {
+        return (
+            <div>
+                <div>
+                    {index === 0 && antonymHeading && <h3>Antonyms:</h3>}
+                    <li>{item}</li>
+
+                </div>
+                {antonymHeading || setAntonymHeading(true)}
+            </div>
+        )
+    }))
+
 
     return (
 
@@ -44,11 +70,9 @@ function Section(props) {
                 {phonetics}
             </div>
             <ul className="synonyms">
-                <h3>Synonyms:</h3>
                 {synonyms}
             </ul>
             <ul className="antonyms">
-                <h3>Antonyms:</h3>
                 {antonyms}
             </ul>
         </div>
