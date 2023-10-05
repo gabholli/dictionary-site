@@ -7,13 +7,13 @@ function Section(props) {
     const [antonymHeading, setAntonymHeading] = useState(false)
 
     const definitions = props.item.meanings.map(item => item.definitions.map(
-        (item, index) => <li key={index}>{item.definition}</li>
+        item => <li>{item.definition}</li>
     ))
 
-    const phonetics = props.item.phonetics.map((item, index) => {
+    const phonetics = props.item.phonetics.map(item => {
         return (
             item.audio && (
-                <div key={index}>
+                <div>
                     <p className="pronunciation">{item.text}</p>
                     <audio controls>
                         <source src={item.audio}></source>
@@ -24,11 +24,11 @@ function Section(props) {
         )
     })
 
-    const partOfSpeech = props.item.meanings.map((item, index) => <li key={index}>{item.partOfSpeech}</li>)
+    const partOfSpeech = props.item.meanings.map(item => <li>{item.partOfSpeech}</li>)
 
     const synonyms = props.item.meanings.map(item => item.synonyms.map((item, index) =>
 
-        <div key={index}>
+        <div>
             <div>
                 {index === 0 && snyonymHeading && <h3>Synonyms:</h3>}
                 <li>{item}</li>
