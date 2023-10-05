@@ -49,10 +49,10 @@ function App() {
 
   }, [search])
 
-  const wordData = word && word.map((item, index) => {
+  const wordData = word && word.map(item => {
     return (
       <Section
-        key={index}
+        key={item.meanings[0].definitions[0].definition}
         item={item}
       />
     )
