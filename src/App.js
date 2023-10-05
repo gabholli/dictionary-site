@@ -46,6 +46,7 @@ function App() {
       setWord("")
     }
 
+    setSearch("")
 
   }, [search])
 
