@@ -132,29 +132,31 @@ input {
   }
 
   .container {
-    grid-template: repeat(5, auto) / repeat(3, 1fr);
+    grid-template: repeat(5, auto) / repeat(5, 1fr);
     grid-template-areas:
-      ". word ."
-      "partOfSpeech definitions phonetics"
-      "synonyms definitions antonyms"
-      ". definitions ."
-      ". definitions ."
+      ". . word . ."
+      ". partOfSpeech definitions phonetics ."
+      ". synonyms definitions antonyms ."
+      ". . definitions . ."
+      ". . definitions . ."
     ;
 
     padding: .5em .5em 2em .5em;
     gap: 20px;
   }
 
-  .word,
   .partOfSpeech,
-  .phonetics,
-  .synonyms,
-  .antonyms {
+  .synonyms {
     place-items: center;
+    justify-self: left;
+  }
+
+  .phonetics,
+  .antonyms {
     justify-self: center;
   }
 
   h3 {
-    text-align: center;
+    text-align: left;
   }
 }
