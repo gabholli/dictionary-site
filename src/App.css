@@ -146,17 +146,19 @@ input {
   }
 
   .partOfSpeech,
-  .synonyms {
+  .synonyms,
+  .antonyms {
     place-items: center;
     justify-self: left;
   }
 
   .phonetics,
   .antonyms {
+    place-items: center;
     justify-self: center;
   }
 
   h3 {
-    text-align: left;
+    text-align: center;
   }
 }
