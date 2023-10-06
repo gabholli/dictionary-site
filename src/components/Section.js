@@ -42,7 +42,7 @@ function Section(props) {
 
     const antonyms = props.item.meanings.map(item => item.antonyms.map((item, index) =>
 
-        <div>
+        <div key={index}>
             <div>
                 {index === 0 && antonymHeading && <h3>Antonyms:</h3>}
                 <li>{item}</li>
