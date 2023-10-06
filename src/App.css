@@ -95,6 +95,12 @@ h3 {
   grid-area: antonyms;
 }
 
+/* Combined selectors */
+
+button,
+input {
+  font-family: 'Courier New', Courier, monospace;
+}
 
 /* Audio player */
 
@@ -121,6 +127,7 @@ input {
   border-radius: 5px;
   width: 12em;
   height: 2em;
+  text-indent: .5em;
 }
 
 /* Media query for tablet or larger screen sizes */
@@ -218,7 +225,7 @@ input {
   }
 
   button {
-    width: 4em;
+    width: 5em;
     height: 2em;
   }
 }
@@ -247,7 +254,7 @@ input {
   }
 
   button {
-    width: 4em;
+    width: 5em;
     height: 2em;
   }
 }
