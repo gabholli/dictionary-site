@@ -117,8 +117,12 @@ button {
   margin-left: 1em;
   border-radius: 5px;
   padding: .2em .4em;
-  background-color: #7FF0F0;
+  background-color: #FFFFFF;
   cursor: pointer;
+}
+
+button:active {
+  background-color: #F29191;
 }
 
 /* Text input field */
