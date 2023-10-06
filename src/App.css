@@ -221,12 +221,12 @@ input {
 
   input {
     width: 12em;
-    height: 2em;
+    height: 1.4em;
   }
 
   button {
     width: 5em;
-    height: 2em;
+    height: 1.4em;
   }
 }
 
@@ -250,11 +250,11 @@ input {
 
   input {
     width: 12em;
-    height: 2em;
+    height: 1.5em;
   }
 
   button {
     width: 5em;
-    height: 2em;
+    height: 1.5em;
   }
 }
