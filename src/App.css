@@ -130,7 +130,7 @@ button:active {
 input {
   border-radius: 5px;
   width: 12em;
-  height: 2em;
+  padding: .2em 0;
   text-indent: .5em;
 }
 
@@ -197,11 +197,6 @@ input {
   button {
     font-size: .9rem;
   }
-
-  input {
-    width: 12em;
-    height: 1.5em;
-  }
 }
 
 @media (min-width: 1440px) {
@@ -221,11 +216,6 @@ input {
   button {
     font-size: 1rem;
   }
-
-  input {
-    width: 12em;
-    height: 1.4em;
-  }
 }
 
 @media (min-width: 2560px) {
@@ -244,10 +234,5 @@ input {
   input,
   button {
     font-size: 1rem;
-  }
-
-  input {
-    width: 12em;
-    height: 1.5em;
   }
 }
