@@ -202,11 +202,6 @@ input {
     width: 12em;
     height: 1.5em;
   }
-
-  button {
-    width: 4em;
-    height: 1.5em;
-  }
 }
 
 @media (min-width: 1440px) {
@@ -231,11 +226,6 @@ input {
     width: 12em;
     height: 1.4em;
   }
-
-  button {
-    width: 5em;
-    height: 1.4em;
-  }
 }
 
 @media (min-width: 2560px) {
@@ -258,11 +248,6 @@ input {
 
   input {
     width: 12em;
-    height: 1.5em;
-  }
-
-  button {
-    width: 5em;
     height: 1.5em;
   }
 }
