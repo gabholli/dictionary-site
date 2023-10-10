@@ -5,7 +5,7 @@ function Navbar(props) {
 
     return (
         <div className="navbar">
-            <h2 className="navbar-text">My Dictionary Site</h2>
+            <h2 className="navbar-text">An English Dictionary</h2>
             <div className="search-container">
                 <form onSubmit={props.handleSubmit}>
                     <input type="text"
