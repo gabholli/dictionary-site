@@ -4,7 +4,7 @@ A straightforward dictionary site created using React drawing from an API.
 
 The address is: https://gabholli-dictionary.netlify.app
 
-I implement code to fetch the data from the chosen dicionary API using useEffect.
+I implemented code to fetch the data from the chosen dicionary API using useEffect.
 I also passed down properties to the appropriate component files to allow for
 proper rendering of the API information.
 
