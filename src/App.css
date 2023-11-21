@@ -25,10 +25,12 @@ body {
 }
 
 .navbar-text {
-  grid-area: text;
   justify-self: center;
   align-self: center;
-  text-align: center;
+}
+
+.navbar-text {
+  grid-area: text;
 }
 
 .search-container {
@@ -41,7 +43,9 @@ body {
 /* Main content */
 
 .container {
+  /* margin: 1em; */
   display: grid;
+  grid-template: repeat(3, auto) / 1fr;
   grid-template-areas:
     "word"
     "phonetics"
@@ -64,6 +68,7 @@ h3 {
 
 .phonetics {
   grid-area: phonetics;
+  /* margin: 0 auto; */
   text-align: center;
 }
 
@@ -109,7 +114,7 @@ audio {
 
 button {
   border: none;
-  margin-left: .3em;
+  margin-left: 1em;
   border-radius: 5px;
   padding: .2em .4em;
   background-color: #FFFFFF;
@@ -134,13 +139,14 @@ input {
 @media (min-width: 768px) {
   .navbar {
     height: 65px;
-    grid-auto-columns: 1fr;
+    grid-template: 65px / repeat(3, 1fr);
     grid-template-areas:
       ". text search";
     gap: unset;
   }
 
   .container {
+    grid-template: repeat(5, auto) / 100px 100px repeat(3, 1fr) 100px 100px;
     grid-template-areas:
       ". . . word . . ."
       ". . partOfSpeech definitions phonetics . ."
@@ -150,12 +156,14 @@ input {
     ;
 
     padding: .5em .5em 2em .5em;
+    gap: 20px;
   }
 
   .partOfSpeech,
   .synonyms,
   .antonyms {
     place-items: center;
+    /* justify-self: center; */
   }
 
   .phonetics,
