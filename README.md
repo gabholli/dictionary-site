@@ -1,7 +1,7 @@
-# Dictionary
+# Project Title
+English Dictionary Site
 
-
-The address is: https://gabholli-dictionary.netlify.app
+## Description
 
 I implemented code to fetch the data from the chosen dicionary API using useEffect.
 I also passed down properties to the appropriate component files to allow for
@@ -11,11 +11,7 @@ I used a simple CSS grid structure to form the way the information is shown on t
 
 Additionally, I used an uncontrolled form input for simplicity's sake for the search form.
 
-# Project Title
-English Dictionary Site
-
-## Description
-A straightforward dictionary site created using React drawing from an API.
+This site was created using React.js.
 
 ## Getting Started
 
