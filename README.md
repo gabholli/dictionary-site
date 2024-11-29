@@ -3,7 +3,7 @@ English Dictionary Site
 
 ## Description
 
-I implemented code to fetch the data from the chosen dicionary API using useEffect.
+I implemented code to fetch the data from the chosen dictionary API using useEffect.
 I also passed down properties to the appropriate component files to allow for
 proper rendering of the API information.
 
